@@ -1,0 +1,30 @@
+#container{
+    position: absolute;
+    width: 1200px;
+    height: 800px;
+    border: solid 2px black;
+    perspective: 600px;
+}
+
+#world{
+    position: absolute;
+    /* width: 300px;
+    height: 300px; */
+    height: inherit;
+    width: inherit;
+    /* background-color: #c0ffff; */
+    /* transform: translate3d(200px,100px,-1000px) rotateX(30deg); */
+    transform-style: preserve-3d; 
+    
+}
+
+#square1{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background-color: #ff0000;
+    /* transform:  rotateY(90deg); */
+    transform: rotateY(45deg) translate(-50%,-50%);
+    top: 400px;
+    left: 600px;
+}
