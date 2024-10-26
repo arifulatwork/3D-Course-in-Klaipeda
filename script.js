@@ -26,6 +26,7 @@ var map = [
 [-1000, 0, 0, 0, 90, 0, 300, 200, "Patterns/doors.jpg"], // Door in Wall 3
 
 
+
    
 
 
@@ -160,7 +161,7 @@ function update(){
 //dz= -(PressForward - PressBack);
 dx= Math.cos(pawn.ry*deg) * (PressRight - PressLeft) -Math.sin(pawn.ry*deg) *(PressForward-PressBack);
 dz=- Math.sin(pawn.ry*deg) *(PressRight - PressLeft) -Math.cos(pawn.ry*deg) *(PressForward-PressBack);
-dy = PressUp;
+dy = - PressUp;
 drx=MouseY;
 dry= -MouseX;
 MouseX =MouseY=0;
