@@ -17,7 +17,24 @@ var map = [
     [1000,0,0,0,90,0,2000,200,"#F0F0C0"],
     [-1000,0,0,0,90,0,2000,200,"#C0C0F0"],
     [0,100,0,90,0,0,2000,2000,"#C0C0C0"],
-    [0,0,-100,0,0,0,200,200,"#ff5733"],
+    
+
+
+    [0,0,-100,0,0,0,200,200,"#9400D3"],//front of
+  [0,0,100,0,0,0,200,200,"#A52A2A"],//behind
+  [100,0,0,0,90,0,200,200,"#1E90FF"],//right
+  [-100,0,0,0,90,0,200,200,"#228B22"],//left
+  [0,100,0,90,0,0,200,200,"#FF00FF"],//flor
+  [0,-100,0,90,0,0,200,200,"#FF00FF"]//top
+
+
+
+    
+    
+
+
+
+    
     
 ]
 
@@ -168,6 +185,7 @@ function CreateNewWorld(){
         newElement.style.height  = map[i][7] + "px";
         newElement.style.background = map[i][8];
         console.log(map[i][6]);
+        newElement.style.opacity = map [i][9]; // Opcity
         newElement.style.transform = "translate3d(" + 
                                          (600 - map[i][6]/2 + map[i][0]) + "px," + 
                                          (400 - map[i][7]/2 + map[i][1]) + "px," + 
