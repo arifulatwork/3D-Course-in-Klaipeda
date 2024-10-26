@@ -29,3 +29,18 @@
     top: 400px;
     left: 600px;
 }
+
+#square2{
+    position:absolute;
+    width: 1000px;
+    height: 1000px;
+    background-color: rgb(124, 8, 225);
+    transform:rotateY(45deg) translate(-50%,-50%);
+    top:400px;
+    left:600px;
+    transform: translate(-50%,-50%)rotateX(90deg) translateZ(-100px);
+
+
+
+}
+
