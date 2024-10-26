@@ -19,19 +19,19 @@
     
     
     }
-    #squarel{
+    .square{
         position:absolute;
-        width: 200px;
+        /* width: 200px;
         height: 200px;
         background-color: #f00;
         transform:rotateY(45deg) translate(-50%,-50%);
         top:400px;
-        left:600px;
+        left:600px; */
     
     
     
     }
-    #square2{
+    /* #square2{
         position:absolute;
         width: 1000px;
         height: 1000px;
@@ -43,4 +43,4 @@
     
     
     
-    }
+    } */

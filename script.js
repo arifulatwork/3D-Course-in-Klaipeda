@@ -10,6 +10,17 @@ function player(x,y,z,rx,ry){
     this.ry =ry;
 }
 
+var map = [
+    // x,y,z,rx,ry,rz width,height,color
+    [0,0,-1000,0,0,0,2000,200,"#C0F0FF"],
+    [0,0,1000,0,0,0,2000,200,"#F0C0F0"],
+    [1000,0,0,0,90,0,2000,200,"#F0F0C0"],
+    [-1000,0,0,0,90,0,2000,200,"#C0C0F0"],
+    [0,100,0,90,0,0,2000,2000,"#C0C0C0"],
+    [0,0,-100,0,0,0,200,200,"#ff5733"],
+    
+]
+
 
 //vriables for movement
 var PressLeft=0;
@@ -146,4 +157,31 @@ world.style.transform = "translateZ(600px)" +"rotateX("+ (-pawn.rx) +"deg)"+
 
 }
 
+function CreateNewWorld(){
+    for (i = 0; i < map.length; i++){
+
+        //create styles of squares
+        let newElement = document.createElement("div");
+        newElement.className = "square";
+        newElement.id = "square" + i;
+        newElement.style.width = map[i][6] + "px";
+        newElement.style.height  = map[i][7] + "px";
+        newElement.style.background = map[i][8];
+        console.log(map[i][6]);
+        newElement.style.transform = "translate3d(" + 
+                                         (600 - map[i][6]/2 + map[i][0]) + "px," + 
+                                         (400 - map[i][7]/2 + map[i][1]) + "px," + 
+                                         map[i][2] + "px)" +
+                                         "rotateX(" + map[i][3] + "deg)" + 
+                                         "rotateY(" + map[i][4] + "deg)" + 
+                                         "rotateZ(" + map[i][5] + "deg)";
+        //add sqaures to the world
+        world.append(newElement);
+    }
+}
+
+
+
+
+CreateNewWorld();
 Timergame = setInterval(update,10);
