@@ -185,32 +185,60 @@ world.style.transform = "translateZ(600px)" +"rotateX("+ (-pawn.rx) +"deg)"+
 }
 
 function CreateNewWorld(){
-    for (i = 0; i < map.length; i++){
+    // for (i = 0; i < map.length; i++){
 
-        //create styles of squares
-        let newElement = document.createElement("div");
-        newElement.className = "square";
-        newElement.id = "square" + i;
-        newElement.style.width = map[i][6] + "px";
-        newElement.style.height  = map[i][7] + "px";
-        newElement.style.background = map[i][8];
-        newElement.style.backgroundImage = "url("+map[i][8]+")"; // Z-index
-        console.log(map[i][6]);
-        newElement.style.opacity = map [i][9]; // Opcity
-        newElement.style.transform = "translate3d(" + 
-                                         (600 - map[i][6]/2 + map[i][0]) + "px," + 
-                                         (400 - map[i][7]/2 + map[i][1]) + "px," + 
-                                         map[i][2] + "px)" +
-                                         "rotateX(" + map[i][3] + "deg)" + 
-                                         "rotateY(" + map[i][4] + "deg)" + 
-                                         "rotateZ(" + map[i][5] + "deg)";
-        //add sqaures to the world
-        world.append(newElement);
-    }
+    //     //create styles of squares
+    //     let newElement = document.createElement("div");
+    //     newElement.className = "square";
+    //     newElement.id = "square" + i;
+    //     newElement.style.width = map[i][6] + "px";
+    //     newElement.style.height  = map[i][7] + "px";
+    //     newElement.style.background = map[i][8];
+    //     newElement.style.backgroundImage = "url("+map[i][8]+")"; // Z-index
+    //     console.log(map[i][6]);
+    //     newElement.style.opacity = map [i][9]; // Opcity
+    //     newElement.style.transform = "translate3d(" + 
+    //                                      (600 - map[i][6]/2 + map[i][0]) + "px," + 
+    //                                      (400 - map[i][7]/2 + map[i][1]) + "px," + 
+    //                                      map[i][2] + "px)" +
+    //                                      "rotateX(" + map[i][3] + "deg)" + 
+    //                                      "rotateY(" + map[i][4] + "deg)" + 
+    //                                      "rotateZ(" + map[i][5] + "deg)";
+    //     //add sqaures to the world
+    //     world.append(newElement);
+    // }
+
+    CreateSquares (map, 'map');
+}
+
+function CreateSquares(sqaures,string){
+  for (i = 0; i < sqaures.length; i++){
+
+      //create styles of squares
+      let newElement = document.createElement("div");
+      newElement.className = string +" square";
+      newElement.id = string + i;
+      newElement.style.width = sqaures[i][6] + "px";
+      newElement.style.height  = sqaures[i][7] + "px";
+      newElement.style.background = sqaures[i][8];
+      newElement.style.backgroundImage = "url("+sqaures[i][8]+")"; // Z-index
+      console.log(sqaures[i][6]);
+      newElement.style.opacity = sqaures [i][9]; // Opcity
+      newElement.style.transform = "translate3d(" + 
+                                       (600 - sqaures[i][6]/2 + sqaures[i][0]) + "px," + 
+                                       (400 - sqaures[i][7]/2 + sqaures[i][1]) + "px," + 
+                                       sqaures[i][2] + "px)" +
+                                       "rotateX(" + sqaures[i][3] + "deg)" + 
+                                       "rotateY(" + sqaures[i][4] + "deg)" + 
+                                       "rotateZ(" + sqaures[i][5] + "deg)";
+      //add sqaures to the world
+      world.append(newElement);
+  }
 }
 
 
 
 
 CreateNewWorld();
+CreateSquares();
 Timergame = setInterval(update,10);
