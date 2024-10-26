@@ -5,6 +5,8 @@ var PressRight = 0;
 var PressForward = 0;
 var PressBack =0;
 var pressUp = 0;
+var MouseX = 0;
+var MouseY = 0;
 
 // add the player 
 
@@ -23,12 +25,12 @@ function player(x,y,z,rx,ry){
 //if the key is pressed events, set the corresponding variable to 1. This will enable the movement of the camera.
 
 document.addEventListener('keydown' ,(event) => {
-    if(event.key === 'a' || event.key === 'ArrowUp') {
+    if(event.key === 'a') {
     PressLeft = 1;
     }
         
     
-    if(event.key === 'd' || event.key === 'ArrowDown') {
+    if(event.key === 'd') {
         PressRight = 1;
     }
 
@@ -74,6 +76,13 @@ document.addEventListener('keyup' ,(event) => {
 
 })
 
+document.addEventListener('mousemove', (event)  =>{
+    MouseX = event.movementX;
+    MouseY = event.movementY;
+})
+
+
+
 var pawn = new player(0,0,0,0,0);
 
 
@@ -85,16 +94,23 @@ function update(){
     dx = PressRight - PressLeft;
     dz = PressForward - PressBack;
     dy = pressUp;
+    drx = MouseY;
+    dry = MouseX;
+    
+
+    
 
     // add Movemnent to the coordinate
     pawn.x = pawn.x + dx;
     pawn.z = pawn.z + dz;
     pawn.y = pawn.y + dy;
+    pawn.rx = pawn.rx + drx;
+    pawn.ry = pawn.ry + dry;
 
 
     // move the world based on the new coordinates
-    world.style.transform = "translate3d(" 
-                                            +(-pawn.x) +"px," +(-pawn.y) +"px,"+ (-pawn.z) +"px)";
+    world.style.transform = "rotateX("+(-pawn.rx)+"deg)+ rotateY("+(-pawn.ry)+"deg)"+
+    "translate3d("+(-pawn.x) +"px," +(-pawn.y) +"px,"+ (-pawn.z) +"px)";
 }
 
 TimerGame = setInterval(update, 10); 
