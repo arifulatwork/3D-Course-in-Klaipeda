@@ -49,6 +49,24 @@ var map = [
 ]
 
 
+// Points array: [x, y, z, type, color]
+var keys = [
+  [1850, 30, -600, 0, 0, 0, 50, 50, "Patterns/keys.png"], // Key near coin 1
+  [150, 30, 250, 0, 0, 0, 50, 50, "Patterns/keys.png"],   // Key near coin 2
+  [-850, 30, 150, 0, 0, 0, 50, 50, "Patterns/keys.png"],  // Key near coin 3
+  [-30, 30, 750, 0, 0, 0, 50, 50, "Patterns/keys.png"],   // Key near coin 4
+];
+
+// Keys array: [x, y, z, keyType, doorId]
+var coin = [
+  [1800, 30, -600, 0,0,0,50,50 ,'#FFFF00'], 
+  [100,30,300,0,0,0,50,50,'#FFFF00'], 
+  [-900,30,100,0,0,0,50,50,'#FFFF00'], 
+  [-50,30,700,0,0,0,50,50,50,'#FFFF00'], 
+  
+];
+
+
 //vriables for movement
 var PressLeft=0;
 var PressRight=0;
@@ -240,5 +258,7 @@ function CreateSquares(sqaures,string){
 
 
 CreateNewWorld();
-CreateSquares();
+CreateSquares(coin, 'coin');
+CreateSquares(keys, 'key');
+
 Timergame = setInterval(update,10);
