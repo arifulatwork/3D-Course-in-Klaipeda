@@ -12,15 +12,24 @@ function player(x,y,z,rx,ry){
 
 var map = [
     // x,y,z,rx,ry,rz width,height,color
-    [0,0,-1000,0,0,0,2000,200,"#C0F0FF"],
-    [0,0,1000,0,0,0,2000,200,"#F0C0F0"],
-    [1000,0,0,0,90,0,2000,200,"#F0F0C0"],
-    [-1000,0,0,0,90,0,2000,200,"#C0C0F0"],
-    [0,100,0,90,0,0,2000,2000,"#C0C0C0"],
+    [0,0,-1000,0,0,0,2000,200,"Patterns/wall2.jpg"],
+    [0,0,1000,0,0,0,2000,200,"Patterns/wall2.jpg"],
+    [1000,0,0,0,90,0,2000,200,"Patterns/wall2.jpg"],
+    [-1000,0,0,0,90,0,2000,200,"Patterns/wall3.jpg"],
+    [0,100,0,90,0,0,2000,2000,"Patterns/ground.jpg"],
     
 
+   // Add a window in Wall 1
+   [0, 50, -1000, 0, 0, 0, 300, 300, "Patterns/windows.jfif"], // Window in Wall 1
+   // Add a door in Wall 2
+// Add a door in Wall 3
+[-1000, 0, 0, 0, 90, 0, 300, 200, "Patterns/doors.jpg"], // Door in Wall 3
 
-    [0,0,-100,0,0,0,200,200,"#9400D3"],//front of
+
+   
+
+
+  [0,0,-100,0,0,0,200,200,"#9400D3"],//front of
   [0,0,100,0,0,0,200,200,"#A52A2A"],//behind
   [100,0,0,0,90,0,200,200,"#1E90FF"],//right
   [-100,0,0,0,90,0,200,200,"#228B22"],//left
@@ -184,6 +193,7 @@ function CreateNewWorld(){
         newElement.style.width = map[i][6] + "px";
         newElement.style.height  = map[i][7] + "px";
         newElement.style.background = map[i][8];
+        newElement.style.backgroundImage = "url("+map[i][8]+")"; // Z-index
         console.log(map[i][6]);
         newElement.style.opacity = map [i][9]; // Opcity
         newElement.style.transform = "translate3d(" + 
