@@ -23,12 +23,12 @@ function player(x,y,z,rx,ry){
 //if the key is pressed events, set the corresponding variable to 1. This will enable the movement of the camera.
 
 document.addEventListener('keydown' ,(event) => {
-    if(event.key === 'a') {
+    if(event.key === 'a' || event.key === 'ArrowUp') {
     PressLeft = 1;
     }
         
     
-    if(event.key === 'd') {
+    if(event.key === 'd' || event.key === 'ArrowDown') {
         PressRight = 1;
     }
 
@@ -40,7 +40,7 @@ document.addEventListener('keydown' ,(event) => {
         PressBack = 1;
     }
 
-    if(event.keyCode === 38) {
+    if(event.keyCode === 32) {
         pressUp = 1;
     }
 
