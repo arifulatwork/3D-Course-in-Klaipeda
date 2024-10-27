@@ -44,3 +44,38 @@
     
     
     } */
+
+    .menu{
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background-color: #c0f0ff;
+        display: none;
+    }
+
+    .button{
+        position: absolute;
+        width: 900px;
+        height: 250px;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    .button:hover{
+        background-color: #ddd;
+    }
+
+    #button1{
+        top: 100px;
+        left: 150px;
+    }
+
+    #button2{
+        top: 450px;
+        left: 150px;
+    }
+
+    #button3{
+        top: 450px;
+        left: 150px;
+    }

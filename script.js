@@ -85,11 +85,18 @@ var container = document.getElementById("container");
 // lock the mouse
 var lock  = false;
 
+//if its possible to lock the cursor 
+
+var canlock = false;
+
 //if the mouse is pressed
 
 container.onclick = function(event){
+    if(canlock){
+
+      container.requestPointerLock();
+    }
     
-    container.requestPointerLock();
 }
 
 
