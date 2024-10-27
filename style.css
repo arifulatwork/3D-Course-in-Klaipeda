@@ -78,4 +78,22 @@
     #button3{
         top: 450px;
         left: 150px;
+        
+    }
+
+    p{
+        position: absolute;
+        font-size: 60px;
+        margin: 0px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: game
+
+    }
+
+
+    @font-face {
+        font-family: game;
+        src: url("Patterns/Play-Bold.ttf");
     }
