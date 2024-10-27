@@ -291,9 +291,7 @@ function interact(objects, string, objectSound){
 
 
 
-CreateNewWorld();
-CreateSquares(coin, 'coin');
-CreateSquares(keys, 'key');
+
 
 function repeatFunction(){
   update();
@@ -301,4 +299,3 @@ function repeatFunction(){
   interact(keys, 'key', keySound); // Pass the key sound
 }
 
-Timergame = setInterval(repeatFunction,10);
