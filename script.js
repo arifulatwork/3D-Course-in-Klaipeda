@@ -264,6 +264,7 @@ function interact(objects, string){
 
     let dto = (objects[i][0] - pawn.x)**2 + (objects[i][1] - pawn.y)**2 + (objects[i][2] - pawn.z)**2;
     let wo  = objects[i][6]**2;
+    console.log(dto,wo);
     if(dto < wo){
       document.getElementById(string + i).style.display = "none";
       objects[i][0] = 1000000;
