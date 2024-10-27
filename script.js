@@ -57,6 +57,9 @@ var keys = [
   [-30, 30, 750, 0, 0, 0, 50, 50, '#FF4500'],   // Key near coin 4
 ];
 
+var coinSound = new Audio('Patterns/coin.mp3');
+var keySound = new Audio('Patterns/keys.mp3');
+
 // Keys array: [x, y, z, keyType, doorId]
 var coin = [
   [1800, 30, -600, 0,0,0,50,50 ,'#FFFF00'], 
@@ -259,13 +262,17 @@ function CreateSquares(sqaures,string){
   }
 }
 
-function interact(objects, string){
+function interact(objects, string, objectSound){
    for(i = 0; i < objects.length; i++){
 
     let dto = (objects[i][0] - pawn.x)**2 + (objects[i][1] - pawn.y)**2 + (objects[i][2] - pawn.z)**2;
     let wo  = objects[i][6]**2;
     console.log(dto,wo);
     if(dto < wo){
+      objectSound.currentTime = 0; // Reset the sound to the start
+      objectSound.play(); 
+      
+      
       document.getElementById(string + i).style.display = "none";
       objects[i][0] = 1000000;
       objects[i][1] = 1000000;
@@ -283,8 +290,8 @@ CreateSquares(keys, 'key');
 
 function repeatFunction(){
   update();
-  interact(coin, 'coin');
-  interact(keys, 'key');
+  interact(coin, 'coin', coinSound); // Pass the coin sound
+  interact(keys, 'key', keySound); // Pass the key sound
 }
 
 Timergame = setInterval(repeatFunction,10);
