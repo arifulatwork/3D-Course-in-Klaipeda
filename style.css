@@ -1,99 +1,81 @@
-#container{
-
-    position:absolute;
+#container {
+    position: absolute;
     width: 1200px;
     height: 800px;
     border: solid 2px #000;
     perspective: 600px;
     overflow: hidden;
-    
-    }
-    
-    #world{
-        position:absolute;
-        width: inherit;
-        height: inherit;
-       
-        transform-style: preserve-3d;
-    
-    
-    
-    }
-    .square{
-        position:absolute;
-        /* width: 200px;
-        height: 200px;
-        background-color: #f00;
-        transform:rotateY(45deg) translate(-50%,-50%);
-        top:400px;
-        left:600px; */
-    
-    
-    
-    }
-    /* #square2{
-        position:absolute;
-        width: 1000px;
-        height: 1000px;
-        background-color: rgb(124, 8, 225);
-        transform:rotateY(45deg) translate(-50%,-50%);
-        top:400px;
-        left:600px;
-        transform: translate(-50%,-50%)rotateX(90deg) translateZ(-100px);
-    
-    
-    
-    } */
+}
 
-    .menu{
-        position: absolute;
-        width: inherit;
-        height: inherit;
-        background-color: #c0f0ff;
-        display: none;
-    }
+#world {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d;
+}
 
-    .button{
-        position: absolute;
-        width: 900px;
-        height: 250px;
-        background-color: #fff;
-        cursor: pointer;
-    }
+.square {
+    position: absolute;
+}
 
-    .button:hover{
-        background-color: #ddd;
-    }
+.menu {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #c0f0ff;
+    display: none; /* Will be toggled in JavaScript */
+}
 
-    #button1{
-        top: 100px;
-        left: 150px;
-    }
+.button {
+    position: absolute;
+    width: 900px;
+    height: 250px;
+    background-color: #fff;
+    cursor: pointer;
+    margin: 20px 0; /* Margin for spacing */
+}
 
-    #button2{
-        top: 450px;
-        left: 150px;
-    }
+.button:hover {
+    background-color: #ddd;
+}
 
-    #button3{
-        top: 450px;
-        left: 150px;
-        
-    }
+/* Positioning buttons in menu1 */
+#button1 {
+    top: 10px; /* Position of Start Game button */
+    left: 150px;
+}
 
-    p{
-        position: absolute;
-        font-size: 60px;
-        margin: 0px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: game
+#button2 {
+    top: 270px; /* Position of Instruction button */
+    left: 150px;
+}
 
-    }
+#button4 {
+    top: 530px; /* Position of Rules button */
+    left: 150px; /* Adjust as necessary */
+}
 
+#button3 {
+    top: 450px; /* Back button in menu2, adjust as necessary */
+    left: 150px;
+}
 
-    @font-face {
-        font-family: game;
-        src: url("Patterns/Play-Bold.ttf");
-    }
+#button5 {
+    top: 450px; /* Adjust as necessary for the back button in menu3 */
+    left: 150px;
+}
+
+p {
+    position: absolute;
+    font-size: 60px;
+    margin: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: game;
+}
+
+@font-face {
+    font-family: game;
+    src: url("Patterns/Play-Bold.ttf");
+}
