@@ -51,10 +51,10 @@ var map = [
 
 // Points array: [x, y, z, type, color]
 var keys = [
-  [1850, 30, -600, 0, 0, 0, 50, 50, "Patterns/keys.png"], // Key near coin 1
-  [150, 30, 250, 0, 0, 0, 50, 50, "Patterns/keys.png"],   // Key near coin 2
-  [-850, 30, 150, 0, 0, 0, 50, 50, "Patterns/keys.png"],  // Key near coin 3
-  [-30, 30, 750, 0, 0, 0, 50, 50, "Patterns/keys.png"],   // Key near coin 4
+  [1850, 30, -600, 0, 0, 0, 50, 50, '#FF4500'], // Key near coin 1
+  [150, 30, 250, 0, 0, 0, 50, 50, '#FF4500'],   // Key near coin 2
+  [-850, 30, 150, 0, 0, 0, 50, 50, '#FF4500'],  // Key near coin 3
+  [-30, 30, 750, 0, 0, 0, 50, 50, '#FF4500'],   // Key near coin 4
 ];
 
 // Keys array: [x, y, z, keyType, doorId]
@@ -249,9 +249,28 @@ function CreateSquares(sqaures,string){
                                        "rotateX(" + sqaures[i][3] + "deg)" + 
                                        "rotateY(" + sqaures[i][4] + "deg)" + 
                                        "rotateZ(" + sqaures[i][5] + "deg)";
+                                      
+       // Add border radius for coins
+    if (string === 'coin') {
+      newElement.style.borderRadius = "50%"; // Make coins circular
+    }
       //add sqaures to the world
       world.append(newElement);
   }
+}
+
+function interact(objects, string){
+   for(i = 0; i < objects.length; i++){
+
+    let dto = (objects[i][0] - pawn.x)**2 + (objects[i][1] - pawn.y)**2 + (objects[i][2] - pawn.z)**2;
+    let wo  = objects[i][6]**2;
+    if(dto < wo){
+      document.getElementById(string + i).style.display = "none";
+      objects[i][0] = 1000000;
+      objects[i][1] = 1000000;
+      objects[i][2] = 1000000;
+    }
+   }
 }
 
 
@@ -261,4 +280,10 @@ CreateNewWorld();
 CreateSquares(coin, 'coin');
 CreateSquares(keys, 'key');
 
-Timergame = setInterval(update,10);
+function repeatFunction(){
+  update();
+  interact(coin, 'coin');
+  interact(keys, 'key');
+}
+
+Timergame = setInterval(repeatFunction,10);
